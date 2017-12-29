@@ -12,11 +12,11 @@ My strong feeling is that statisticians should be able to handle the data in wha
 
 To facilitate the most efficient and timely analysis this is the information you should pass to a statistician:
 
-The raw data.
-1. A [tidy data set](http://vita.had.co.nz/papers/tidy-data.pdf) 
-2. A code book describing each variable and its values in the tidy data set.
-3. An explicit and exact recipe you used to go from 1 -> 2,3
-4. Let's look at each part of the data package you will transfer.
+1. The raw data.
+2. A [tidy data set](http://vita.had.co.nz/papers/tidy-data.pdf) 
+3. A code book describing each variable and its values in the tidy data set.
+4. An explicit and exact recipe you used to go from 1 -> 2,3
+Let's look at each part of the data package you will transfer.
 
 ### The raw data
 
