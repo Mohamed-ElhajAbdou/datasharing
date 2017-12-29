@@ -45,7 +45,7 @@ The general principles of tidy data are laid out by [Hadley Wickham](http://hadl
 3. There should be one table for each "kind" of variable
 4. If you have multiple tables, they should include a column in the table that allows them to be joined or merged
 
-While these are the hard and fast rules, there are a number of other things that will make your data set much easier to handle. First is to include a row at the top of each data table/spreadsheet that contains full row names. So if you measured age at diagnosis for patients, you would head that column with the name |* AgeAtDiagnosis , instead of something like 'ADx', or another abbreviation that may be hard for another person to understand.
+While these are the hard and fast rules, there are a number of other things that will make your data set much easier to handle. First is to include a row at the top of each data table/spreadsheet that contains full row names. So if you measured age at diagnosis for patients, you would head that column with the name |*AgeAtDiagnosis , instead of something like 'ADx', or another abbreviation that may be hard for another person to understand.
 
 
 count-words(text) =
