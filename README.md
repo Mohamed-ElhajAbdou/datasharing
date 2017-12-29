@@ -47,6 +47,20 @@ The general principles of tidy data are laid out by [Hadley Wickham](http://hadl
 
 While these are the hard and fast rules, there are a number of other things that will make your data set much easier to handle. First is to include a row at the top of each data table/spreadsheet that contains full row names. So if you measured age at diagnosis for patients, you would head that column with the name 'AgeAtDiagnosis', instead of something like 'ADx', or another abbreviation that may be hard for another person to understand.
 
+
+count-words(text) =
+   counts = new Map()
+   words = text.split(R"\W+")
+   words each word ->
+      current-count = counts.get(word) or 0
+      counts.set(word, current-count + 1)
+   consume(counts.entries()).sort(compare) where
+      compare({w1, c1}, {w2, c2}) = c2 - c1
+
+
+
+
+
 Here is an example of how this would work from genomics. Suppose that for 20 people you have collected gene expression measurements with RNA-sequencing. You have also collected demographic and clinical information about the patients including their age, treatment, and diagnosis. You would have one table/spreadsheet that contains the clinical/demographic information. It would have four columns (patient id, age, treatment, diagnosis) and 21 rows (a row with variable names, then one row for every patient). You would also have one spreadsheet for the summarized genomic data. Usually this type of data is summarized at the level of the number of counts per exon. Suppose you have 100,000 exons, then you would have a table/spreadsheet that had 21 rows (a row for gene names, and one row for each patient) and 100,001 columns (one row for patient ids and one row for each data type).
 
 If you are sharing your data with the collaborator in Excel, the tidy data should be in one Excel file per table. They should not have multiple worksheets, no macros should be applied to the data, and no columns/cells should be highlighted. Alternatively share the data in a CSV or TAB-delimited text file. (Beware however that reading CSV files into Excel can sometimes lead to non-reproducible handling of date and time variables.)
